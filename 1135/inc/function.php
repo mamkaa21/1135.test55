@@ -61,3 +61,14 @@ function getArticleList(): string
     }
     return $link;
 }
+
+/** функция для калькулятора обоже */
+function getNumber(int $number): string
+{
+    if(isset($_POST['submit']))
+    {
+        $number1  = $_POST['number_one'];
+        $number2 = $_POST['number_two'];
+    }
+
+}

@@ -27,6 +27,8 @@
                                 <li><a class="dropdown-item text-blue-600" href="https://www.purina.ru/find-a-pet/cat-breeds">Виды котов</a></li>
                                 <li><a class="dropdown-item text-blue-600" href="https://www.purina.ru/find-a-pet/cat-breeds/breed-selector/questions">Как подобрать породу</a></li></ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="/cal1135/calculator.php">Калькулятор</a> </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
