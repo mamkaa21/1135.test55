@@ -44,7 +44,16 @@
                 <div class="col">asd</div>
                 <div class="col-2"> ]]]</div>
                 <div class="col">]]</div>
-                /div>
+                </div>
             </div>
             <h1>Коты</h1>
     </header>
+
+    <main>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row ">
+
+
+
+
