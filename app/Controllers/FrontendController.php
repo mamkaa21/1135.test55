@@ -22,4 +22,12 @@ class FrontendController
 
         $this->model->getArticleById($id);
     }
+public function renderArticlesCardList()
+{
+    $this->view->renderSingleArticleCard();
+}
+    public function singleArticleCard($article)
+    {
+        $this->view->renderSingleArticleCard($article);
+    }
 }
