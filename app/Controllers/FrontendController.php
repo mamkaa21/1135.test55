@@ -14,20 +14,34 @@ class FrontendController
 
     public function articles()
     {
-        $this->model->getArticles();
+        $article = $this->model->getArticles();
+        return $this->view->renderSingleArticleCard($article);
     }
-
+    /*
     public function singleArticle($id)
     {
-
         $this->model->getArticleById($id);
     }
-public function renderArticlesCardList()
-{
-    $this->view->renderSingleArticleCard();
-}
+    public function renderArticlesCardList()
+    {
+        $this->view->renderSingleArticleCard();
+    }
     public function singleArticleCard($article)
     {
         $this->view->renderSingleArticleCard($article);
     }
+    public function index()
+    {
+        $this->view->showIndexPage();
+    }
+    public function showBlogJsonPage()
+    {
+        $articles = $this->model->getArticles();
+        $this->view->renderBlogJsonPage($articles);
+    }
+    public function showSinglePageJsonBlog($id)
+    {
+        $article = $this->model->getArticleById($id);
+        $this->view->renderSinglePageJsonBlog($article);
+    }*/
 }

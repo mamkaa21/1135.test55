@@ -1,30 +1,28 @@
 <?php
-use App\Controllers\FrontendController;
+require_once 'vendor/autoload.php';
+use Laminas\Diactoros\Response\HtmlResponse;
+use MiladRahimi\PhpRouter\Router;
+use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
+use Laminas\Diactoros\Response\JsonResponse;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-$app = new FrontendController();
-echo $app->articles();
+//$app = new FrontendController();
+//echo $app->articles();
 
+$router = Router::create();
 
-require __DIR__ . "/../vendor/autoload.php";
+$router->get('/', [\App\Controllers\FrontendController::class, 'articles']);
+$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'singleArticle']);
 
-use MinasRouter\Router\Route;
+try {
+    $router->dispatch();
+}
+catch (RouteNotFoundException $e) {
+    $router->getPublisher()->publish(new HtmlResponse('Not found', 404));
+}
+catch (Throwable $e) {
+    $router->getPublisher()->publish(new HtmlResponse('Internal error' . $e->getMessage(), 500));
+}
 
-// The second argument is optional. It separates the Controller and Method from the string
-// Example: "Controller@method"
-Route::start("http://yourdomain.com", "@");
-
-Route::get('/', function()
-{
-    Route::get('/article', [App\Controllers\ArticleModel::class, 'index']);
-});
-
-// Sometimes you may need to register a route that responds to multiple HTTP verbs:
-//Route::match(["GET", "POST"], "/", function() {
-//    // ...
-//});
-
-// You will put all your routes before this function
-Route::execute();
