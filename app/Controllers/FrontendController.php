@@ -15,13 +15,14 @@ class FrontendController
     public function articles()
     {
         $article = $this->model->getArticles();
-        return $this->view->renderSingleArticleCard($article);
     }
-    /*
+
     public function singleArticle($id)
     {
         $this->model->getArticleById($id);
     }
+
+    /*
     public function renderArticlesCardList()
     {
         $this->view->renderSingleArticleCard();
@@ -30,10 +31,12 @@ class FrontendController
     {
         $this->view->renderSingleArticleCard($article);
     }
+    */
     public function index()
     {
         $this->view->showIndexPage();
     }
+
     public function showBlogJsonPage()
     {
         $articles = $this->model->getArticles();
@@ -43,5 +46,5 @@ class FrontendController
     {
         $article = $this->model->getArticleById($id);
         $this->view->renderSinglePageJsonBlog($article);
-    }*/
+    }
 }

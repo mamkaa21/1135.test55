@@ -13,9 +13,9 @@ ini_set('display_errors', 'on');
 
 $router = Router::create();
 
-$router->get('/', [\App\Controllers\FrontendController::class, 'articles']);
-$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'singleArticle']);
-
+$router->get('/', [\App\Controllers\FrontendController::class, 'showBlogJsonPage']);
+$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
+$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
 try {
     $router->dispatch();
 }

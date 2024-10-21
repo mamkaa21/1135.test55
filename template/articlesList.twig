@@ -3,15 +3,18 @@
     {% for article in articles %}
 
         <div class="col-4 mb-3">
+            <article class="article">
+
             <div class="card shadow-sm">
-                <img src="./{{ article.image }}" width="100%" height="225" alt="">
+                <img src="{{ article.image }}" width="100%" height="225" alt="">
                 <div class="card-body" >
                     <h5 class="card-title">{{ article.title }}  </h5>
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="index.php?id={{ article.id }}"  class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                        <a href="/page/{{ article.id }}"  class="btn btn-sm btn-outline-secondary">Подробнее</a>
                     </div>
                 </div>
             </div>
+            </article>
         </div>
 
     {% endfor %}
