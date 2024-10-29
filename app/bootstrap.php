@@ -11,6 +11,7 @@ $router = Router::create();
 
 $router->get('/', [\App\Controllers\FrontendController::class, 'showBlogJsonPage']);
 $router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
+$router->get('/page/create', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
 
 try {
     $router->dispatch();

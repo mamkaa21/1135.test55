@@ -37,4 +37,9 @@ class FrontendController
         $article = $this->model->getArticleById($id);
         $this->view->renderSinglePageJsonBlog($article);
     }
+
+    public  function  ArtickeCreate()
+    {
+
+    }
 }

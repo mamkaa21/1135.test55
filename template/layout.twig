@@ -10,6 +10,19 @@
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <div class="row ">
+                    <form  name="crud" action="articlesList.twig">
+                        <a href="/page/create"  class="btn btn-sm btn-outline-secondary">создать статью</a>
+                        <a href="/page/read"  class="btn btn-sm btn-outline-secondary">прочитать статью</a>
+                        <a href="/page/update"  class="btn btn-sm btn-outline-secondary">обновить статью</a>
+                        <a href="/page/delete"  class="btn btn-sm btn-outline-secondary">удалить статью</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row ">
                     <article class="article">
                         {%  block content %}
                         {% endblock %}
