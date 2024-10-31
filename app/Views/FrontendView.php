@@ -31,19 +31,19 @@ class FrontendView
         $description = 'Описание Главной страницы';
 //        $template = $this->twig->load('index.twig');
 //        echo $template->render(['title' => $title, 'description' => $description ]);
-        echo $this->twig->render('index.twig', ['title' => $title, 'description' => $description]);
+        echo $this->twig->render('/frontend/index.twig', ['title' => $title, 'description' => $description]);
     }
 
     public function renderBlogJsonPage($articles)
     {
         $title = 'Блог на Json';
         $description = 'Вывод всех статей';
-        echo $this->twig->render('articlesList.twig',compact('title', 'description', 'articles'));
+        echo $this->twig->render('/frontend/articlesList.twig',compact('title', 'description', 'articles'));
     }
     public function renderSinglePageJsonBlog($article)
     {
         $title = 'Блог на Json';
         $description = 'Вывод стастьи';
-        echo $this->twig->render('singleArticlePage.twig',compact('title', 'description', 'article'));
+        echo $this->twig->render('/frontend/singleArticlePage.twig',compact('title', 'description', 'article'));
     }
 }

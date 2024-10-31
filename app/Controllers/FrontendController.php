@@ -11,7 +11,7 @@ class FrontendController
         $this->model = new ArticleModel();
         $this->view = new FrontendView();
     }
-
+/*
     public function articles()
     {
         $article = $this->model->getArticles();
@@ -21,7 +21,7 @@ class FrontendController
     {
         $this->model->getArticleById($id);
     }
-
+*/
     public function index()
     {
         $this->view->showIndexPage();
@@ -32,13 +32,13 @@ class FrontendController
         $articles = $this->model->getArticles();
         $this->view->renderBlogJsonPage($articles);
     }
-    public function showSinglePageJsonBlog($id)
+    public function showSinglePageJsonBlog(int $id)
     {
         $article = $this->model->getArticleById($id);
         $this->view->renderSinglePageJsonBlog($article);
     }
 
-    public  function  ArtickeCreate()
+    public  function  ArticleCreate()
     {
 
     }

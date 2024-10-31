@@ -22,7 +22,7 @@ class ArticleModel
 
     function getArticleById(int $id):array
     {
-        $articleList =getArticles();
+        $articleList = $this->getArticles();
         $curentArticle = [];
         if (array_key_exists($id, $articleList)) {
             $curentArticle = $articleList[$id];

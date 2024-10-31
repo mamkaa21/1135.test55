@@ -7,11 +7,13 @@ use MiladRahimi\PhpRouter\Router;
 use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
 use Laminas\Diactoros\Response\JsonResponse;
 
+
 $router = Router::create();
 
 $router->get('/', [\App\Controllers\FrontendController::class, 'showBlogJsonPage']);
 $router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
-$router->get('/page/create', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
+$router->get('/admin', [\App\Controllers\BackendController::class, 'index']);
+$router->get('/admin/create', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
 
 try {
     $router->dispatch();
