@@ -38,7 +38,7 @@ class FrontendController
         $this->view->renderSinglePageJsonBlog($article);
     }
 
-    public  function  ArticleCreate()
+    public  function  showArticleAdd()
     {
 
     }
