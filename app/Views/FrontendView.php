@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Views;
-
-use Couchbase\View;
+use App\Models\ArticleModel;
+use App\Models\DbArticle;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -18,7 +18,7 @@ class FrontendView
 
     function renderArticlesCardList(): string
     {
-        $articles = getArticles();
+        $articles = getAll();
         $content = '';
         foreach ($articles as $article) {
             $content .= renderArticleCard($article);

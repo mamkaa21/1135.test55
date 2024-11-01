@@ -13,7 +13,13 @@ $router = Router::create();
 $router->get('/', [\App\Controllers\FrontendController::class, 'showBlogJsonPage']);
 $router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
 $router->get('/admin', [\App\Controllers\BackendController::class, 'index']);
-$router->get('/admin/create', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
+$router->get('/admin/create', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
+$router->get('/admin/edit', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
+$router->get('/admin/update', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
+$router->get('/admin/delete', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
+
+
+
 
 try {
     $router->dispatch();
