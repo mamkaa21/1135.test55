@@ -7,6 +7,8 @@ use App\Views\FrontendView;
 
 class FrontendController
 {
+    protected $view;
+    private  $model;
     public function __construct()
     {
         $this->model = new ArticleModel();
@@ -18,19 +20,13 @@ class FrontendController
         $this->view->showIndexPage();
     }
 
-    public function showBlogJsonPage()
+    public function showArticlesListPage()
     {
-//        $articles = $this->model->getArticles();
-//        $this->view->renderBlogJsonPage($articles);
-
         $articles = $this->model->getAll();
         $this->view->renderArticlesListPage($articles);
     }
-    public function showSinglePageJsonBlog(int $id)
+    public function showSingleArticlePage(int $id)
     {
-//        $article = $this->model->getArticleById($id);
-//        $this->view->renderSinglePageJsonBlog($article);
-
         $article = $this->model->find($id);
         $this->view->renderSingleArticlePage($article);
     }

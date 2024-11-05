@@ -16,24 +16,34 @@ class BackendView extends CoreView
     public function index()
     {
         $pagetitle = "Admin Panel";
-        echo $this->twig->render('/index.twig');
+        echo $this->twig->render('index.twig', compact('pagetitle'));
     }
 
     public function renderEditArticlePage($article)
     {
         $pagetitle = "Редактирование статьи ID #".$article['id'];
-        return $this->twig->render('/partials/editArticle.twig',compact('pagetitle','article'));
+        return $this->twig->render('editArticle.twig',compact('pagetitle','article'));
     }
     public function renderCreateArticlePage()
     {
         $pagetitle = "Добавление новой статьи";
-        return $this->twig->render('partials/createArticle.twig',compact('pagetitle'));
+        return $this->twig->render('createArticle.twig',compact('pagetitle'));
     }
 
     public function showArticlesTable(array $articles)
     {
-        $pagetitle = "Список статей";
-        return $this->twig->render('/partials/index-table.twig',compact('articles','pagetitle'));
+        /*
+        echo '<p>' . $article["id"] . '</p>
+            <img src="/1135/' . $article["image"] . '"  alt="">';*/
+        //$pagetitle = "Список статей";
+        /*
+        foreach($articles as $article)
+        {
+            //var_dump($article["image"]);
+            echo '<p>' . $article["id"] . '</p>
+            <img src="/1135/' . $article["image"] . '"  alt="">';
+        }*/
+        return $this->twig->render('index-table.twig',compact('articles'));
     }
 
 }

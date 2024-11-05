@@ -2,32 +2,34 @@
 
 declare(strict_types=1);
 
-use Laminas\Diactoros\Response\HtmlResponse;
 use MiladRahimi\PhpRouter\Router;
 use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
-use Laminas\Diactoros\Response\JsonResponse;
+use Laminas\Diactoros\ServerRequest;
+use Laminas\Diactoros\Response\HtmlResponse;
 
 
 $router = Router::create();
 
-$router->get('/', [\App\Controllers\FrontendController::class, 'showBlogJsonPage']);
-$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSinglePageJsonBlog']);
+$router->get('/', [\App\Controllers\FrontendController::class, 'showArticlesListPage']);
+$router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSingleArticlePage']);
 $router->get('/admin', [\App\Controllers\BackendController::class, 'index']);
+$router->get('/admin/articles', [\App\Controllers\BackendController::class, 'showArticlesTable']);
 $router->get('/admin/create', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
-$router->get('/admin/edit', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
-$router->get('/admin/update', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
-$router->get('/admin/delete', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
+$router->get('/admin/edit', [\App\Controllers\BackendController::class, 'storeArticle']);
+$router->get('/admin/store', [\App\Controllers\BackendController::class, 'showEditArticleForm']);
+$router->get('/admin/delete', [\App\Controllers\BackendController::class, 'updateArticle']);
 
 
 
 
+$router->dispatch();
+/*
 try {
-    $router->dispatch();
 }
 catch (RouteNotFoundException $e) {
     $router->getPublisher()->publish(new HtmlResponse('Not found', 404));
 }
 catch (Throwable $e) {
     $router->getPublisher()->publish(new HtmlResponse('Internal error' . $e->getMessage(), 500));
-}
+}*/
 

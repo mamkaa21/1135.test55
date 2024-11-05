@@ -31,19 +31,20 @@
                 <tbody>
                 {% for article in articles %}
                     <tr class="align-middle">
-                        <td>{{ article.id}}</td>
-                        <td>{{ article.title}}</td>
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.title }}</td>
                         <td>
                             <div class="col p-2">
-                                <img class="img-fluid " src="/{{ article.image}}" style="width: 200px" alt="Article Image">
+                                <img src="/1135/{{ article.image }}" style="width: 200px"
+                                     alt="Article Image">
                             </div>
                         </td>
                         <td>
                             <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
-                                <a href="/admin/{{ article.id}}/edit"  class="btn btn-success">
+                                <a href="/admin/{{ article.id }}/edit"  class="btn btn-success">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <a href="/admin/{{ article.id}}/delete"  class="btn btn-danger">
+                                <a href="/admin/{{ article.id }}/delete"  class="btn btn-danger">
                                     <i class="bi bi-trash3"></i>
                                 </a>
                             </div>

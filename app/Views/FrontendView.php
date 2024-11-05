@@ -1,21 +1,10 @@
 <?php
 
 namespace App\Views;
-use App\Models\ArticleModel;
-use App\Models\DbArticle;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
+use App\Core\CoreView;
 
-class FrontendView
+class FrontendView extends CoreView
 {
-    private  $twig;
-
-    public function __construct()
-    {
-        $loader = new FilesystemLoader( "./template");
-        $this->twig = new Environment($loader);
-    }
-
     function renderArticlesCardList(): string
     {
         $articles = getAll();
@@ -31,19 +20,20 @@ class FrontendView
         $description = 'Описание Главной страницы';
 //        $template = $this->twig->load('index.twig');
 //        echo $template->render(['title' => $title, 'description' => $description ]);
-        echo $this->twig->render('/frontend/index.twig', ['title' => $title, 'description' => $description]);
+        echo $this->twig->render('/frontend/layout.twig', ['title' => $title, 'description' => $description]);
     }
 
-    public function renderBlogJsonPage($articles)
+    public function renderArticlesListPage($articles)
     {
         $title = 'Блог на Json';
         $description = 'Вывод всех статей';
-        echo $this->twig->render('/frontend/articlesList.twig',compact('title', 'description', 'articles'));
+        echo $this->twig->render('articlesList.twig',compact('title', 'description', 'articles'));
     }
-    public function renderSinglePageJsonBlog($article)
+    public function renderSingleArticlePage($article)
     {
         $title = 'Блог на Json';
         $description = 'Вывод стастьи';
-        echo $this->twig->render('/frontend/singleArticlePage.twig',compact('title', 'description', 'article'));
+        echo $this->twig->render('singleArticlePage.twig',compact('title', 'description', 'article'));
     }
+
 }

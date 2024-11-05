@@ -1,0 +1,20 @@
+{% include('./partials/header.twig') %}
+
+
+<main>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row ">
+                    <article class="article">
+                        {%  block content %}
+                        {% endblock %}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+<address>все права незащищены <br>Автор данной писанины Vieux Ronchon</address>
+
+
+
+{% include('./partials/footer.twig') %}
