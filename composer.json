@@ -1,0 +1,19 @@
+{
+    "name": "student/1135.test55",
+    "autoload": {
+        "psr-4": {
+            "Student\\1135Test55\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mamka"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.14",
+        "miladrahimi/phprouter": "5.*",
+        "ext-pdo": "*"
+    }
+}
