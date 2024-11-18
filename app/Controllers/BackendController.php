@@ -20,6 +20,7 @@ class BackendController
     public function index()
     {
         $this->view->index();
+
     }
 
     public function showCreateArticleForm()

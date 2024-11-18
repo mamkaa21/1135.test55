@@ -17,6 +17,7 @@ class BackendView extends CoreView
     {
         $pagetitle = "Admin Panel";
         echo $this->twig->render('index.twig', compact('pagetitle'));
+
     }
 
     public function renderEditArticlePage($article)

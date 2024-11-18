@@ -7,7 +7,6 @@ use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Response\HtmlResponse;
 
-
 $router = Router::create();
 
 $router->get('/', [\App\Controllers\FrontendController::class, 'showArticlesListPage']);
