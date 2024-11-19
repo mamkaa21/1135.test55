@@ -30,9 +30,8 @@ class FrontendController
         $article = $this->model->find($id);
         $this->view->renderSingleArticlePage($article);
     }
-
-    public  function  showArticleAdd()
+    public  function  ShowAuthorizationPage()
     {
-
+        $this->view->renderAuthorizationPage();
     }
 }

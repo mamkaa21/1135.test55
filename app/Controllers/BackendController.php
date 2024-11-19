@@ -49,4 +49,25 @@ class BackendController
         $articles = $this->model->getAll();
         echo $this->view->showArticlesTable($articles);
     }
+
+    public function EnterAuthorization(ServerRequest $request)
+    {
+        $login = $request->getParsedBody();
+        //var_dump($login);
+        define('ADMIN' , 'admin' );
+        if ( ! empty( $_POST['login']))
+        {
+            if( $_POST['login'] === ADMIN )
+            {
+                $_SESSION [ 'admin' ] = ADMIN ;
+                echo 'Вы успешно авторизовались!' ;
+                Helper::goToUrl('/admin');
+            }
+            else
+            {
+                echo 'Неверный логин' ;
+            }
+        }
+
+    }
 }

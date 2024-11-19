@@ -36,4 +36,11 @@ class FrontendView extends CoreView
         echo $this->twig->render('singleArticlePage.twig',compact('title', 'description', 'article'));
     }
 
+    public function renderAuthorizationPage()
+    {
+        $title = 'Авторизация';
+        $description = 'Войдите в аккаунт';
+        echo $this->twig->render('authorizationPage.twig',compact('title', 'description'));
+    }
+
 }
