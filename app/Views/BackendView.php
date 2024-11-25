@@ -28,6 +28,7 @@ class BackendView extends CoreView
     public function renderCreateArticlePage()
     {
         $pagetitle = "Добавление новой статьи";
+
         return $this->twig->render('createArticle.twig',compact('pagetitle'));
     }
 

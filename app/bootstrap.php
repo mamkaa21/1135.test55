@@ -14,8 +14,8 @@ $router->get('/page/{id}', [\App\Controllers\FrontendController::class, 'showSin
 $router->get('/admin', [\App\Controllers\BackendController::class, 'index']);
 $router->get('/admin/articles', [\App\Controllers\BackendController::class, 'showArticlesTable']);
 $router->get('/admin/create', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
-$router->get('/admin/edit', [\App\Controllers\BackendController::class, 'storeArticle']);
-$router->get('/admin/store', [\App\Controllers\BackendController::class, 'showEditArticleForm']);
+$router->get('/admin/edit', [\App\Controllers\BackendController::class, 'showEditArticleForm']);
+$router->get('/admin/store', [\App\Controllers\BackendController::class, 'storeArticle']);
 $router->get('/admin/delete', [\App\Controllers\BackendController::class, 'updateArticle']);
 $router->get('/authorization', [\App\Controllers\FrontendController::class, 'ShowAuthorizationPage']);
 $router->post('/authorization/enter', [\App\Controllers\BackendController::class, 'EnterAuthorization']);
