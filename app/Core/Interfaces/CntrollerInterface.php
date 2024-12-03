@@ -36,5 +36,4 @@ interface CntrollerInterface
      * Remove the specified resource from storage.
      */
     public function destroy($resource);
-
 }

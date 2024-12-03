@@ -17,5 +17,4 @@ class CoreView
     {
         $this->loader = new \Twig\Loader\FilesystemLoader($path);
     }
-
 }

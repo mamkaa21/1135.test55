@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Models;
 use PDO;
 use App\Core\Helper as h;
-
 class DbArticle
 {
     protected $pdo;
@@ -26,7 +24,6 @@ class DbArticle
         //$this->pdo = new PDO($dir);// SQLite PDO connection
         $this->setTable('articles');
     }
-
     /**
      * @param mixed $table
      */
@@ -34,21 +31,18 @@ class DbArticle
     {
         $this->table = $table;
     }
-
     public function getAll(): array
     {
         $stmt = $this->pdo->prepare('SELECT * FROM '.$this->table );
         $stmt->execute([]);
         return $stmt->fetchAll();
     }
-
     public function find($id): array
     {
         $stmt = $this->pdo->prepare('SELECT * FROM '.$this->table.' WHERE id = :id');
         $stmt->execute([ 'id' => $id ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
     public function store( $article): void
     {
         $sql = "INSERT INTO ".$this->table." (id, title, image, content) VALUES (NULL, :title, :image, :content);" ;
@@ -58,7 +52,6 @@ class DbArticle
         $stmt->bindValue(":content", $article['content'], \PDO::PARAM_STR);
         $stmt->execute();
     }
-
     public function update(object|array|null $article)
     {
         $sql = "INSERT INTO ".$this->table." (id, title, image, content) VALUES (NULL, :title, :image, :content)";
@@ -70,6 +63,4 @@ class DbArticle
         $stmt->bindValue(":content", $article['content'], \PDO::PARAM_STR);
         $stmt->execute();
     }
-
-
 }

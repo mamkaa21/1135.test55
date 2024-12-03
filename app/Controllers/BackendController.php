@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Controllers;
-
 use App\Models\DbArticle;
 use App\Views\BackendView;
 use Laminas\Diactoros\ServerRequest;
 use App\Core\Helper;
-
 class BackendController
 {
     protected $view;
@@ -20,9 +17,7 @@ class BackendController
     public function index()
     {
         $this->view->index();
-
     }
-
     public function showCreateArticleForm()
     {
         echo $this->view->renderCreateArticlePage();
@@ -49,7 +44,6 @@ class BackendController
         $articles = $this->model->getAll();
         echo $this->view->showArticlesTable($articles);
     }
-
     public function EnterAuthorization(ServerRequest $request)
     {
         $login = $request->getParsedBody();
@@ -69,6 +63,4 @@ class BackendController
             }
         }
     }
-
-
 }

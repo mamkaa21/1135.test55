@@ -9,5 +9,4 @@ class CoreController
         $this->view = new CoreView('');
         $this->model = new CoreModel();
     }
-
 }

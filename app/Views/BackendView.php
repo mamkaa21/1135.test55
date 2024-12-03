@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Views;
-
 use App\Core\CoreView;
 use App\Core\Helper;
-
 class BackendView extends CoreView
 {
     public $formr;
@@ -19,7 +16,6 @@ class BackendView extends CoreView
         echo $this->twig->render('index.twig', compact('pagetitle'));
 
     }
-
     public function renderEditArticlePage($article)
     {
         $pagetitle = "Редактирование статьи ID #".$article['id'];
@@ -31,7 +27,6 @@ class BackendView extends CoreView
 
         return $this->twig->render('createArticle.twig',compact('pagetitle'));
     }
-
     public function showArticlesTable(array $articles)
     {
         /*
@@ -47,5 +42,4 @@ class BackendView extends CoreView
         }*/
         return $this->twig->render('index-table.twig',compact('articles'));
     }
-
 }

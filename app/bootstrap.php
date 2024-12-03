@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 use MiladRahimi\PhpRouter\Router;
@@ -16,14 +15,12 @@ $router->get('/admin/articles', [\App\Controllers\BackendController::class, 'sho
 $router->get('/admin/create', [\App\Controllers\BackendController::class, 'showCreateArticleForm']);
 $router->get('/admin/edit', [\App\Controllers\BackendController::class, 'showEditArticleForm']);
 $router->get('/admin/store', [\App\Controllers\BackendController::class, 'storeArticle']);
-$router->get('/admin/delete', [\App\Controllers\BackendController::class, 'updateArticle']);
+$router->get('/admin/store', [\App\Controllers\BackendController::class, 'storeArticle']);
+$router->get('/admin/update', [\App\Controllers\BackendController::class, 'updateArticle']);
+$router->get('/admin/delete', [\App\Controllers\BackendController::class, 'deleteArticle']);
 $router->get('/authorization', [\App\Controllers\FrontendController::class, 'ShowAuthorizationPage']);
 $router->post('/authorization/enter', [\App\Controllers\BackendController::class, 'EnterAuthorization']);
 $router->get('/authorization/exit', [\App\Controllers\FrontendController::class, 'showArticlesListPage']);
-
-
-
-
 
 $router->dispatch();
 /*
@@ -35,4 +32,3 @@ catch (RouteNotFoundException $e) {
 catch (Throwable $e) {
     $router->getPublisher()->publish(new HtmlResponse('Internal error' . $e->getMessage(), 500));
 }*/
-

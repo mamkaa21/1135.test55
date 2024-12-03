@@ -78,4 +78,3 @@
             Автор данной писанины Vieux Ronchon</address>
 </body>
 </html>
-
